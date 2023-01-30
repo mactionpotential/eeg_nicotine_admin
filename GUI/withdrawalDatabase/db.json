@@ -1,0 +1,16 @@
+{
+  "user": [
+    {
+      "id": "admin",
+      "name": "admin",
+      "password": "admin",
+      "email": "bhavsary@mcmaster.ca"
+    },
+    {
+      "id": "Yashexe",
+      "name": "Yash Bhavsar",
+      "password": "Yashexe",
+      "email": "bhavsary@mcmaster.ca"
+    }
+  ]
+}
