@@ -1,0 +1,42 @@
+.wrapper{
+    background-color: #0e0b1a;
+    /* background-image: linear-gradient(orange, pink); */
+    min-height: 100vh;
+}
+.header{
+    background-color: rgba(0,0,0,0.5);
+}
+.Title{
+    text-align: center;
+}
+/* .card{
+    box-shadow: rgba(0, 0, 0, 0.95) 0px 5px 15px;
+} */
+.card-header{
+    text-align: left;
+}
+.card-body{
+    text-align:left;
+}
+.card-footer{
+    text-align: right;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+/* input[type=password]{
+    background-color: #202428;
+    color: #ffffff;
+}
+input[type=password]:focus{
+    background-color: #202428;
+    color: #ffffff;
+}
+input[type=text]{
+    background-color: #202428;
+    color: #ffffff;
+}
+input[type=text]:focus{
+    background-color: #202428;
+    color: #ffffff;
+} */

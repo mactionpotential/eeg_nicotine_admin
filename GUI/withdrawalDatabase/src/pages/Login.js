@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
+import './css/Login.css';
+
 const Login = () => {
 
     const[username,getUsername] = useState('');
@@ -48,8 +50,10 @@ const Login = () => {
     }
     
     return ( 
-        <div>
-        <div className="header"><h1 className="text-center"><b>Withdrawal Database</b></h1></div>
+        <div className="wrapper">
+        <div className="header">
+            <h1 className="Title"><b>Withdrawal Database</b></h1>
+        </div>
         <div className="col-lg-6 offset-lg-3">
         <form className="container" onSubmit={proceedLogin}>
         <div className="card">
@@ -68,8 +72,8 @@ const Login = () => {
             </div>
 
             <div className="card-footer">
-                <button type="submit" className="btn btn-primary">Login</button>  Need an account?
-                <a className="btn btn-danger" href="/register">Register</a>
+                <button type="submit" className="btn btn-primary">Login</button>
+                <div>  Need an account? <a href="/register">Register</a> </div>
             </div>
 
         </div>

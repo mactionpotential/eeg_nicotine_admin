@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
+import './css/Home.css';
+
 const Home = () => {
 
     const Navigate = useNavigate();
@@ -16,17 +18,18 @@ const Home = () => {
     },[Navigate]);
 
     return ( 
-        <div>
-            <div className="header">
-                <Link id="homeLink" to={'/'}>Home</Link>
-                |
-                <Link id="logoutLink"to={'/login'}>Logout</Link>
-                <h1 className="text-center">
-                    <b>Withdrawal Database | </b>
-                    <span style={{fontSize:25}}>Welcome <b>{displayuser}</b>!</span>
-                </h1>
-                <br/>
-            </div>
+        <div className="wrapper">
+        <div className="header">
+            <Link id="homeLink" to={'/'}>Home</Link>
+            |
+            <Link id="logoutLink"to={'/login'}>Logout</Link>
+            <h1 className="Title">
+                <b>Withdrawal Database | </b>
+                <span style={{fontSize:25}}>Welcome <b>{displayuser}</b>!</span>
+            </h1>
+            <br/>
+        </div>
+        
         </div>
      );
 }

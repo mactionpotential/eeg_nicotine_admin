@@ -2,16 +2,14 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
+import './css/Register.css';
+
 const Register = () => {
 
     const[id,idchange]=useState("");
     const[name,namechange]=useState("");
     const[password,passwordchange]=useState("");
     const[email,emailchange]=useState("");
-    // const[phone,phonechange]=useState("");
-    // const[country,countrychange]=useState("");
-    // const[address,addresschange]=useState("");
-    // const[gender,genderchange]=useState("");
 
     const navigation=useNavigate();
 
@@ -51,7 +49,7 @@ const Register = () => {
     const handlesubmit=(e)=>{
     
         e.preventDefault();
-        let regobj={id,name,password,email /*,phone,country,address,gender*/}
+        let regobj={id,name,password,email}
         //console.log(regobj);
         if(isValidate()){
             fetch("http://localhost:8000/user",{
@@ -67,8 +65,10 @@ const Register = () => {
         }
     }
     return ( 
-        <div>
-        <div className="header"><h1 className="text-center"><b>Withdrawal Database</b></h1></div>
+        <div className="wrapper">
+        <div className="header">
+            <h1 className="Title"><b>Withdrawal Database</b></h1>
+        </div>
         <div className="offset-lg-3 col-lg-6">
         <form className="container" onSubmit={handlesubmit}>
             <div className="card">
@@ -101,45 +101,12 @@ const Register = () => {
                                 <input value={email} onChange={e=>emailchange(e.target.value)} className="form-control"></input>
                             </div>
                         </div>
-                        {/* <div className="col-lg-6">
-                            <div className="form-group">
-                                <label>Phone Number</label>
-                                <input value={phone} onChange={e=>phonechange(e.target.value)} className="form-control"></input>
-                            </div>
-                        </div>
-                        <div className="col-lg-6">
-                            <div className="form-group">
-                                <label>Country</label>
-                                <select value={country} onChange={e=>countrychange(e.target.value)} className="form-control">
-                                    <option value="canada">Canada</option>
-                                    <option value="usa">USA</option>
-                                    <option value="india">India</option>
-                                    <option value="nepal">Nepal</option>
-                                    <option value="australia">Australia</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div className="col-lg-12">
-                            <div className="form-group">
-                                <label>Address</label>
-                                <textarea value={address} onChange={e=>addresschange(e.target.value)} className="form-control"></textarea>
-                            </div>
-                        </div>
-                        <div className="col-lg-6">
-                            <div className="form-group">
-                                <label>Gender</label>
-                                <select value={gender} onChange={e=>genderchange(e.target.value)} className = "form-control">
-                                    <option value="male">Male</option>
-                                    <option value="female">Female</option>
-                                </select>
-                            </div>
-                        </div> */}
                     </div>
                 </div>
 
                 <div className="card-footer">
-                    <button type="submit" className="btn btn-primary">Register</button> Already have an account?
-                     <a className="btn btn-danger" href="/login">Login</a>
+                    <button type="submit" className="btn btn-primary">Register</button>
+                    <div>Already have an account? <a href="/login">Login</a></div>
                 </div>
                 
             </div>

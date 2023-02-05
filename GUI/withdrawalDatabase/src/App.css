@@ -1,6 +1,5 @@
 .App {
   text-align: left;
-
 }
 .App-logo {
   height: 40vmin;
@@ -16,15 +15,7 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-.card-header{
-  text-align: left;
-}
-.card-body{
-  text-align:left;
-}
-.card-footer{
-  text-align: right;
-}
+
 .errmsg{
   color:red;
 }
@@ -33,29 +24,4 @@ app-check{
   height: 20px;
   width: 20px;
   margin: 1%;
-}
-
-.App-link {
-  color: #61dafb;
-}
-.header{
-  background-color: #0e0b1a;
-  width: 100%;
-  color: #fff;
-  padding: 1%;
-
-  text-align: right;
-}
-
-#homeLink{
-  text-decoration: none;
-  color: white;
-  margin-right: 3px;
-  font-weight: 750;
-}
-#logoutLink{
-  text-decoration: none;
-  color: white;
-  margin-left: 3px;
-  font-weight: 750;
 }
