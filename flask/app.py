@@ -1,6 +1,7 @@
 from flask import Flask, render_template, session, redirect
 from functools import wraps
 import pymongo
+import serial
 
 app = Flask(__name__)
 
@@ -25,7 +26,6 @@ def login_required(f):
         
     return wrap
 
-
 #We need to import our routes as well in this file
 from user import routes
 
@@ -41,9 +41,43 @@ def home():
 @login_required
 
 def dashbaord():
-    return render_template('dashboard.html')
+    # Render the dashboard template with the current LED status
+    return render_template("dashboard.html", status='OFF')
 
 #create file to automatically excute flask
 #set up two templates one for Home page and another for dashboard page
 
-#arduino stuff
+#arduino stuff (V1)
+ser = serial.Serial('/dev/cu.usbmodem11101', 9600)
+
+# Define route for turning LED on
+@app.route('/turn_on/')
+def turn_on():
+    ser.write(b'1')  # Send "1" to Arduino to turn on LED
+    #return 'LED turned on!'
+    return render_template("dashboard.html", status="LED is oN")
+
+# Define route for turning LED off
+@app.route('/turn_off/')
+def turn_off():
+    ser.write(b'0')  # Send "0" to Arduino to turn off LED
+    #return 'LED turned off!'
+    return render_template("dashboard.html", status="LED is off")
+
+# @app.route("/turn-on/")
+# def turn_on():
+#     # Open the serial port and send the "on" command
+#     with serial.Serial("/dev/cu.usbmodem11201", 9600) as ser:
+#         ser.write(b"on")
+
+#     # Render the dashboard template with the "LED is on" status message
+#     return render_template("dashboard.html", status="LED is off")
+
+# @app.route("/turn-off/")
+# def turn_off():
+#     # Open the serial port and send the "off" command
+#     with serial.Serial("/dev/cu.usbmodem11201", 9600) as ser:
+#         ser.write(b"off")
+
+#     # Render the dashboard template with the "LED is off" status message
+#     return render_template("dashboard.html", status="LED is off")
